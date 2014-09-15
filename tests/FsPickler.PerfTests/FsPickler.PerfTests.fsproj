@@ -1,11 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>50cbceef-24dd-454f-a3a3-ac1759883311</ProjectGuid>
+    <ProjectGuid>{50CBCEEF-24DD-454F-A3A3-AC1759883311}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>FsPickler.PerfTests</RootNamespace>
     <AssemblyName>FsPickler.PerfTests</AssemblyName>
@@ -83,35 +82,25 @@
   <ItemGroup>
     <Reference Include="FSharp.Charting">
       <HintPath>..\..\packages\FSharp.Charting.0.90.6\lib\net40\FSharp.Charting.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib" />
-    <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\packages\Newtonsoft.Json.6.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="PerfUtil">
       <HintPath>..\..\packages\PerfUtil.0.1.8\lib\net40\PerfUtil.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="PerfUtil.NUnit">
       <HintPath>..\..\packages\PerfUtil.NUnit.0.1.8\lib\net40\PerfUtil.NUnit.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="protobuf-net">
       <HintPath>..\..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="ServiceStack.Text">
       <HintPath>..\..\packages\ServiceStack.Text.4.0.31\lib\net40\ServiceStack.Text.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -123,14 +112,13 @@
     <Reference Include="System.Xml" />
     <ProjectReference Include="..\..\src\FsPickler.Json\FsPickler.Json.fsproj">
       <Name>FsPickler.Json</Name>
-      <Project>{1dcb4ad7-2c00-4bcd-b1a5-a469f31e2cd1}</Project>
-      <Private>True</Private>
+      <Project>{1DCB4AD7-2C00-4BCD-B1A5-A469F31E2CD1}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\src\FsPickler\FsPickler.fsproj">
       <Name>FsPickler</Name>
-      <Project>{3ad987bf-f0fa-40bd-9dae-4af3a5fe9cc7}</Project>
-      <Private>True</Private>
+      <Project>{3AD987BF-F0FA-40BD-9DAE-4AF3A5FE9CC7}</Project>
     </ProjectReference>
+    <Reference Include="FSharp.Core, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

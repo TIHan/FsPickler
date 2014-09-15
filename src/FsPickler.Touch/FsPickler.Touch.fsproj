@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{F2A71F9B-5D33-465A-A702-920D77279786}</ProjectTypeGuids>
+    <ProjectGuid>{4A4B6DB7-C961-4AB3-B490-26DA43B51F8C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FsPickler.Touch</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>FsPickler.Touch</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;__IOS__</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <ConsolePause>false</ConsolePause>
+    <Tailcalls>false</Tailcalls>
+    <PlatformTarget>
+    </PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ConsolePause>false</ConsolePause>
+    <Tailcalls>true</Tailcalls>
+    <DefineConstants>__IOS__</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="mscorlib" />
+    <Reference Include="FSharp.Core" />
+    <Reference Include="monotouch" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.1\Framework\v4.0\Microsoft.FSharp.Targets" />
+  <ItemGroup>
+    <Compile Include="..\FsPickler\assemblyInfo.fs">
+      <Link>assemblyInfo.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\Utils\Utils.fs">
+      <Link>Utils\Utils.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\Utils\Emit.fs">
+      <Link>Utils\Emit.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\Utils\Reflection.fs">
+      <Link>Utils\Reflection.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\Utils\ShallowCopy.fs">
+      <Link>Utils\ShallowCopy.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\Utils\Hashing.fs">
+      <Link>Utils\Hashing.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\Pickler\Types.fs">
+      <Link>Pickler\Types.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\Pickler\PickleFormat.fs">
+      <Link>Pickler\PickleFormat.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\Pickler\ReflectionCache.fs">
+      <Link>Pickler\ReflectionCache.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\Pickler\Pickler.fsi">
+      <Link>Pickler\Pickler.fsi</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\Pickler\Pickler.fs">
+      <Link>Pickler\Pickler.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\Pickler\PrimitivePicklers.fs">
+      <Link>Pickler\PrimitivePicklers.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\Pickler\CompositePickler.fs">
+      <Link>Pickler\CompositePickler.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\Pickler\UnionCaseHelper.fs">
+      <Link>Pickler\UnionCaseHelper.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\Pickler\ReflectionPicklers.fs">
+      <Link>Pickler\ReflectionPicklers.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\Combinators\Wrappers.fs">
+      <Link>Combinators\Wrappers.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\Combinators\Sequence.fs">
+      <Link>Combinators\Sequence.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\Combinators\Array.fs">
+      <Link>Combinators\Array.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\Combinators\Tuple.fs">
+      <Link>Combinators\Tuple.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\Combinators\FSharpList.fs">
+      <Link>Combinators\FSharpList.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\Combinators\DotNetTypes.fs">
+      <Link>Combinators\DotNetTypes.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\Combinators\FSharpTypes.fs">
+      <Link>Combinators\FSharpTypes.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\Combinators\Collections.fs">
+      <Link>Combinators\Collections.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\PicklerGeneration\TypeShape.fs">
+      <Link>PicklerGeneration\TypeShape.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\PicklerGeneration\PicklerEmit.fs">
+      <Link>PicklerGeneration\PicklerEmit.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\PicklerGeneration\FieldPicklers.fs">
+      <Link>PicklerGeneration\FieldPicklers.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\PicklerGeneration\ISerializablePickler.fs">
+      <Link>PicklerGeneration\ISerializablePickler.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\PicklerGeneration\DataContractPickler.fs">
+      <Link>PicklerGeneration\DataContractPickler.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\PicklerGeneration\FSharpTypeGen.fs">
+      <Link>PicklerGeneration\FSharpTypeGen.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\PicklerGeneration\CustomPickler.fs">
+      <Link>PicklerGeneration\CustomPickler.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\PicklerGeneration\PicklerFactory.fs">
+      <Link>PicklerGeneration\PicklerFactory.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\PicklerGeneration\PicklerResolution.fs">
+      <Link>PicklerGeneration\PicklerResolution.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\PicklerGeneration\PicklerCache.fs">
+      <Link>PicklerGeneration\PicklerCache.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\Format\BinaryFormat.fs">
+      <Link>Format\BinaryFormat.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\Format\XmlFormat.fs">
+      <Link>Format\XmlFormat.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\Format\NullFormat.fs">
+      <Link>Format\NullFormat.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\FsPickler\RootSerialization.fs">
+      <Link>FsPickler\RootSerialization.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\FsPickler\Serializer.fs">
+      <Link>FsPickler\Serializer.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\FsPickler\TextSerializer.fs">
+      <Link>FsPickler\TextSerializer.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\FsPickler\BinarySerializer.fs">
+      <Link>FsPickler\BinarySerializer.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\FsPickler\XmlSerializer.fs">
+      <Link>FsPickler\XmlSerializer.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\FsPickler\FsPickler.fs">
+      <Link>FsPickler\FsPickler.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\FsPickler\Combinators.fs">
+      <Link>FsPickler\Combinators.fs</Link>
+    </Compile>
+    <Compile Include="..\FsPickler\FsPickler\ExtensionMethods.fs">
+      <Link>FsPickler\ExtensionMethods.fs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utils\" />
+    <Folder Include="Pickler\" />
+    <Folder Include="Combinators\" />
+    <Folder Include="PicklerGeneration\" />
+    <Folder Include="Format\" />
+    <Folder Include="FsPickler\" />
+  </ItemGroup>
+</Project>

@@ -158,10 +158,14 @@
             member __.WriteTimeSpan _ value = bw.Write value.Ticks
             member __.WriteGuid _ value = bw.Write (value.ToByteArray())
 
-            member __.WriteBigInteger _ value = 
+            member __.WriteBigInteger _ value =
+#if __IOS__
+                raise <| NotImplementedException ()
+#else
                 let data = value.ToByteArray()
                 bw.Write data.Length
                 bw.Write data
+#endif
 
             member __.WriteBytes _ value = 
                 if obj.ReferenceEquals(value, null) then bw.Write -1
@@ -263,9 +267,13 @@
             member __.ReadGuid _ = let bytes = br.ReadBytes(16) in Guid(bytes)
 
             member __.ReadBigInteger _ =
+#if __IOS__
+                raise <| NotImplementedException ()
+#else
                 let length = br.ReadInt32()
                 let data = br.ReadBytes(length)
                 new System.Numerics.BigInteger(data)
+#endif
 
             member __.ReadBytes _ = 
                 let length = br.ReadInt32() 
