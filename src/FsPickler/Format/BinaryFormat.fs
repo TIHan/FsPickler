@@ -159,7 +159,7 @@
             member __.WriteGuid _ value = bw.Write (value.ToByteArray())
 
             member __.WriteBigInteger _ value =
-#if __IOS__
+#if __MOBILE__
                 raise <| NotImplementedException ()
 #else
                 let data = value.ToByteArray()
@@ -267,7 +267,7 @@
             member __.ReadGuid _ = let bytes = br.ReadBytes(16) in Guid(bytes)
 
             member __.ReadBigInteger _ =
-#if __IOS__
+#if __MOBILE__
                 raise <| NotImplementedException ()
 #else
                 let length = br.ReadInt32()
